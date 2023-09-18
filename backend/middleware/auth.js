@@ -15,7 +15,6 @@ exports.isUserAuthenticated = catchAsyncError(async (req, res, next) => {
 
 exports.isAdmin = (...roles) => {
   return (req, res, next) => {
-    console.log(req.user.role);
     if (!roles.includes(req.user.role)) {
       console.log("No mention");
       return next(new ErrorHandler("The user is not authorized User", 403));
