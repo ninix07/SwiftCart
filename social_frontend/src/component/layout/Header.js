@@ -6,7 +6,6 @@ import "./styles/header.scss";
 const Header = () => {
   const [Active, setActive] = useState("False");
   const clicked = () => {
-    console.log("hello");
     setActive(!Active);
   };
   return (
@@ -41,7 +40,7 @@ const Header = () => {
             </svg>
           </a>
         </div>
-        <div className={'navItems ${Active ? "active" : "}'}>
+        <div className={`navItems ${Active ? "active" : ""}`}>
           <div className="list">
             <ul>
               <li>
@@ -72,13 +71,8 @@ const Header = () => {
             <BiUser className="iconsStyle" size={25} />
           </div>
         </div>
-        <div
-          onClick={() => {
-            console.log("clicked");
-          }}
-          className="mobile"
-        >
-          <RxHamburgerMenu size={25} />
+        <div onClick={clicked} className="mobile">
+          <RxHamburgerMenu className="iconsStyle" size={25} />
         </div>
       </nav>
     </div>

@@ -3,7 +3,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 20%;
-  background-color: #a9c027ab;
+  background-color: #1b2430;
   padding: 20px 50px;
   .logo {
     flex: 0.5;
@@ -25,39 +25,42 @@ nav {
           text-decoration: none;
           font-size: 1.3rem;
           font-weight: 600;
-          color: #394149;
+          color: #ffffff;
           transition: 0.3s ease-in-out;
         }
 
         a:hover {
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the values as needed */
-          color: #394149;
+          color: #ff7a00;
+          transition: 0.3s ease-in-out;
+        }
+        a::after {
+          width: 0;
         }
 
-        a:hover::after,
-        .active::after {
+        a:hover::after {
           content: "";
-          width: 30%;
+          width: 40%;
           height: 4px;
-          background-color: #394149;
+          background-color: #ff7a00;
           position: absolute;
           bottom: -4px;
-          left: 20px;
+          left: 1.2vw;
+          transition: width 0.5s ease-in-out;
         }
       }
     }
   }
-  .icons {
-    color: #394149;
-    .iconsStyle {
-      padding: 0 1.3vw;
-    }
-    .iconsStyle:hover {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the values as needed */
-      color: #394149;
-      cursor: pointer;
-    }
+
+  .iconsStyle {
+    padding: 0 1.3vw;
+    color: #ffffff;
   }
+  .iconsStyle:hover {
+    color: #ff7a00;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
   .mobile {
     display: none;
   }
@@ -68,13 +71,14 @@ nav {
       justify-content: flex-start;
       flex-direction: column;
       position: fixed;
-      top: 72px;
+      top: 75px;
       right: -300px;
       width: 300px;
       height: 100vh;
-      background: #92a330ab;
+      background: #2a3239;
       box-shadow: 0px, 40px, 60px rgba(255, 255, 255, 0.7);
-      transition: 0.3s ease-in-out;
+      transition: 0.5s ease-in-out;
+      padding-left: 10px;
       ul {
         align-items: flex-start;
         justify-content: flex-start;
@@ -87,9 +91,6 @@ nav {
       .icons {
         display: flex;
         margin-top: 20px;
-        .iconsStyle {
-          margin-left: 40px;
-        }
       }
     }
     .navItems.active {
