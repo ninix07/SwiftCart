@@ -1,0 +1,102 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20%;
+  background-color: #a9c027ab;
+  padding: 20px 50px;
+  .logo {
+    flex: 0.5;
+  }
+  .navItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      li {
+        list-style: none;
+        padding: 0 1.3vw;
+        position: relative;
+
+        a {
+          text-decoration: none;
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #394149;
+          transition: 0.3s ease-in-out;
+        }
+
+        a:hover {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the values as needed */
+          color: #394149;
+        }
+
+        a:hover::after,
+        .active::after {
+          content: "";
+          width: 30%;
+          height: 4px;
+          background-color: #394149;
+          position: absolute;
+          bottom: -4px;
+          left: 20px;
+        }
+      }
+    }
+  }
+  .icons {
+    color: #394149;
+    .iconsStyle {
+      padding: 0 1.3vw;
+    }
+    .iconsStyle:hover {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the values as needed */
+      color: #394149;
+      cursor: pointer;
+    }
+  }
+  .mobile {
+    display: none;
+  }
+  @media screen and (max-width: 769px) {
+    .navItems {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      position: fixed;
+      top: 72px;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background: #92a330ab;
+      box-shadow: 0px, 40px, 60px rgba(255, 255, 255, 0.7);
+      transition: 0.3s ease-in-out;
+      ul {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        li {
+          margin-top: 20px;
+        }
+      }
+      .icons {
+        display: flex;
+        margin-top: 20px;
+        .iconsStyle {
+          margin-left: 40px;
+        }
+      }
+    }
+    .navItems.active {
+      right: 0px;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+}

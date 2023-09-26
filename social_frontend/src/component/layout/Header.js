@@ -1,43 +1,88 @@
-import React from "react";
-
-import { ReactNavbar } from "overlay-navbar";
-import logo from "../../image/logo.png";
-
-const options = {
-  burgerColorHover: "#eb4034",
-  logo,
-  logoWidth: "20vmax",
-  navColor1: "white",
-  logoHoverSize: "10px",
-  logoHoverColor: "#eb4034",
-  link1Text: "Home",
-  link2Text: "Products",
-  link3Text: "Contact",
-  link4Text: "About",
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
-  link1Size: "1.3vmax",
-  link1Color: "rgba(35, 35, 35,0.8)",
-  nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
-  nav3justifyContent: "flex-start",
-  nav4justifyContent: "flex-start",
-  link1ColorHover: "#eb4034",
-  link1Margin: "1vmax",
-  profileIconUrl: "/login",
-  profileIconColor: "rgba(35, 35, 35,0.8)",
-  searchIconColor: "rgba(35, 35, 35,0.8)",
-  cartIconColor: "rgba(35, 35, 35,0.8)",
-  profileIconColorHover: "#eb4034",
-  searchIconColorHover: "#eb4034",
-  cartIconColorHover: "#eb4034",
-  cartIconMargin: "1vmax",
-};
+import React, { useState } from "react";
+import { BiSearchAlt2, BiCartAlt, BiUser } from "react-icons/bi";
+import { RxHamburgerMenu } from "react-icons/rx";
+import "./styles/header.scss";
 
 const Header = () => {
-  return <ReactNavbar {...options} />;
+  const [Active, setActive] = useState("False");
+  const clicked = () => {
+    console.log("hello");
+    setActive(!Active);
+  };
+  return (
+    <div>
+      <nav>
+        <div className="logo">
+          <a href="/">
+            <svg
+              id="logo-38"
+              width="78"
+              height="32"
+              viewBox="0 0 78 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {" "}
+              <path
+                d="M55.5 0H77.5L58.5 32H36.5L55.5 0Z"
+                class="ccustom"
+                fill="#FF7A00"
+              ></path>{" "}
+              <path
+                d="M35.5 0H51.5L32.5 32H16.5L35.5 0Z"
+                class="ccompli1"
+                fill="#FF9736"
+              ></path>{" "}
+              <path
+                d="M19.5 0H31.5L12.5 32H0.5L19.5 0Z"
+                class="ccompli2"
+                fill="#FFBC7D"
+              ></path>{" "}
+            </svg>
+          </a>
+        </div>
+        <div className={'navItems ${Active ? "active" : "}'}>
+          <div className="list">
+            <ul>
+              <li>
+                <a href="/home" className="active">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/product" className="active">
+                  Product
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="active">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="active">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="icons">
+            <BiSearchAlt2 className="iconsStyle" size={25} />
+            <BiCartAlt className="iconsStyle" size={25} />
+            <BiUser className="iconsStyle" size={25} />
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            console.log("clicked");
+          }}
+          className="mobile"
+        >
+          <RxHamburgerMenu size={25} />
+        </div>
+      </nav>
+    </div>
+  );
 };
 
 export default Header;
