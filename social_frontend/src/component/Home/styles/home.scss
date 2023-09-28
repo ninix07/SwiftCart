@@ -1,0 +1,54 @@
+.Banner {
+  background-image: linear-gradient(to bottom, #1b2430, #2a3239),
+    url("../../../image/background.jpeg");
+  height: 100vmin;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  & h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 5vh;
+  }
+  & p {
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 3vh;
+  }
+  & a {
+    & button {
+      margin-bottom: 5vmax;
+      cursor: pointer;
+      background-color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 0rem;
+      padding: 1vmax;
+      transition: all 0.5s;
+      width: 9vmax;
+      font: 500 1vmax;
+    }
+  }
+  & a :hover {
+    background-color: #ff7a00;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Banner h1 {
+    margin: 3vh;
+    font-size: 1rem;
+  }
+
+  .Banner p {
+    margin: 1vh;
+    font-size: 1rem;
+  }
+
+  .Banner a button {
+    font-size: 0.7rem;
+  }
+}
