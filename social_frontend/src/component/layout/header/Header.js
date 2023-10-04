@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import "./styles/header.scss";
 
 const Header = () => {
-  const [Active, setActive] = useState("False");
+  const [Active, setActive] = useState(false);
   const clicked = () => {
     setActive(!Active);
   };
