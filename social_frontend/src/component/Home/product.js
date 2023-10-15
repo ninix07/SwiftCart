@@ -9,14 +9,14 @@ const options = {
   isHalf: true,
   color: "gray",
   activeColor: "tomato",
-  size: window.innerWidth < 768 ? 20 : 25,
+  size: window.innerWidth < 768 ? 20 : 22,
   starSpacing: "0",
   className: "customStars",
 };
 const Product = ({ product }) => {
   return (
     <Link className="product" to={product._id}>
-      <img src={product.images[0].url} />
+      <img src={product.images[0].url} alt="" />
       <p>{product.name}</p>
       <div className="product-review">
         <div className="stars-container">
