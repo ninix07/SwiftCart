@@ -1,8 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import "./styles/home.scss";
 import Product from "./product.js";
 import MetaData from "../layout/metaData";
+import { getProduct } from "../../actions/productAction";
+import { UseSelector,useDispatch, useSelector } from "react-redux";
+import Loader from "../layout/loader/Loader";
 const product = {
   name: "Blue Shirt",
   images: [
@@ -14,8 +17,14 @@ const product = {
   _id: "adsd",
 };
 const Home = () => {
+  const dispatch = useDispatch();
+  const{loading, error, products,productCount}=useSelector(state=>state.products)
+  useEffect(()=>{
+    dispatch(getProduct())
+  },[dispatch]);
   return (
-    <Fragment>
+    <Fragment >
+      {loading? <Loader/>:<Fragment>
       <MetaData title="Ecommerce"/>
       <div className="Banner">
         <p>Welcome to Ecommerce</p>
@@ -29,19 +38,9 @@ const Home = () => {
       </div>
       <h2 className="homeHeading">Featured Products</h2>
       <div className="container">
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
+      {products && products.map(product=>(<Product product={product}/>))}
       </div>
+    </Fragment>}
     </Fragment>
   );
 };

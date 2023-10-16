@@ -1,5 +1,6 @@
 .product {
   width: 14vmax;
+  height: 12;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -10,17 +11,21 @@
   padding-bottom: 0.5vmax;
   border-radius: 1vmax;
 
+
+
   img {
+    
     width: 14vmax;
     border-radius: 0.9vmax 0.9vmax 0 0;
   }
   .product-review {
     margin: 1vh 0.5vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
 
     .reviewsNo {
-      margin: 1vh 0.5vw;
+      margin: 1vh 0.2vw;
       font-size: 0.8rem;
       font-weight: 300;
       color: tomato;
@@ -33,6 +38,7 @@
     font-size: 1.5rem;
     margin: 1vh 0.5vw;
     margin-bottom: 0;
+   
   }
   .price {
     margin: 1vh 0.5vw;
@@ -52,8 +58,6 @@
     }
     .product-review {
       margin: 0.5vw 0.5vh;
-
-      flex-direction: column;
       .reviewsNo {
         margin: 0.5vw 0.5vh;
 
