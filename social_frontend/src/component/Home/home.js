@@ -4,24 +4,21 @@ import "./styles/home.scss";
 import Product from "./product.js";
 import MetaData from "../layout/metaData";
 import { getProduct } from "../../actions/productAction";
-import { UseSelector,useDispatch, useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import Loader from "../layout/loader/Loader";
-const product = {
-  name: "Blue Shirt",
-  images: [
-    {
-      url: "https://cdn.suitdirect.co.uk/upload/siteimages/large/0070631_031_a.jpg",
-    },
-  ],
-  price: "$3000",
-  _id: "adsd",
-};
+import { useAlert } from "react-alert";
+
 const Home = () => {
+  const alert=useAlert()
   const dispatch = useDispatch();
-  const{loading, error, products,productCount}=useSelector(state=>state.products)
+  const{loading, error, products}=useSelector(state=>state.products)
   useEffect(()=>{
+    if(error){
+      console.log("Hello")
+      return alert.error(error)
+    }
     dispatch(getProduct())
-  },[dispatch]);
+  },[dispatch,error,alert]);
   return (
     <Fragment >
       {loading? <Loader/>:<Fragment>
