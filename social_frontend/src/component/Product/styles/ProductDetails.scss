@@ -1,0 +1,233 @@
+.productDetails{
+    background-color:rgb(214,214,214);
+    width:100%;
+    height: fit-content;
+    padding:6vmax  ;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+   
+
+    > div{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding:2vmax;
+        box-sizing: border-box;
+        border:1px solid white;
+        
+    }
+    > div:last-child{
+        align-items:flex-start ;
+        .detailsBlock-1 {
+            & h2{
+                color: rgb(54,54,54);
+                font: 600 1.8vmax "Roboto";
+            }
+            & p {
+                color: rgba(54,54,54,0.582);
+                font:200 0.6vmax cursive
+            }
+        }
+        .detailsBlock-2{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 2px;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.205); 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.205); 
+            > span{
+                color: rgba(54,54,54,0.582);
+                font:200 0.6vmax cursive;
+                margin-top: 0.7vh;
+            }
+        }
+        .detailsBlock-3{
+            width:70%;
+            > h1{
+                color:rgba(17,17,17,0.795);
+                font: 400 1.8vmax "Roboto";
+                margin:1vmax 0;
+            }
+            .greenColor{
+                color: green;
+            }
+            .redColor{
+                color:red;
+            }
+            > p{
+                border-top:1px solid rgba(0 ,0 ,0 ,0.205);
+                border-bottom: 1px solid rgba(0 ,0 ,0 ,0.205);
+                padding: 1vmax 0;
+                color: rgba(0,0,0,0.651);
+                font:400 1vmax "Roboto";
+                margin:1vmax 0;
+            }
+            .detailsBlock-3-1{
+                display: flex;
+                align-items: center;
+               
+                .detailsBlock-3-1-1{
+                    & button{
+                        border:none;
+                        background-color: rgba(0,0,0,0.616);
+                        padding:0.5vmax;
+                        cursor:pointer;
+                        color:white;
+                        transition: all 0.5s;
+                    
+                    &:hover{
+                        background-color: rgba(0,0,0,0.767);
+                    }
+                   
+                }
+                
+                > input{
+                    border:none;
+                    padding:0.5vmax;
+                    width:1vmax;
+                    text-align: center;
+                    outline:none;
+                    color: rgba(0,0,0,0.74);
+                }
+                }
+                & > button:last-child{
+                    border:none;
+                    cursor:pointer;
+                    color: white;
+                    transition:all 0.5s;
+                    background-color: tomato;
+                    font:500 0.7vmax "Roboto";
+                    border-radius: 20px;
+                    padding:0.5vmax 2vmax;
+                    margin:1vmax;
+                    outline:none;
+                    &:hover{
+                        background-color: rgb(214,84,61);
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    .detailsBlock-4{
+        color:rgba(0,0,0,0.534);
+        font:500 1.2vmax "Roboto";
+        >p{
+            color:rgba(0,0,0,0.897);
+            font:300 0.8vmax "Roboto";
+        }
+    }
+    .submitReview{
+        border:none;
+        cursor:pointer;
+        color: white;
+        transition:all 0.5s;
+        background-color: tomato;
+        font:500 0.7vmax "Roboto";
+        border-radius: 20px;
+        padding:0.5vmax 2vmax;
+        
+        outline:none;
+        &:hover{
+            background-color: rgb(214,84,61);
+        }
+    }
+   
+    .CarouselImage{
+        margin: auto;
+        width:auto;
+        max-width: 30vw;
+        height:auto;
+        max-height:80vh;
+        display: inline-block;
+
+    }
+   
+
+}
+.reviewsHeading{
+    color: #000000be;
+    font:500 1.4vmax "Roboto";
+    text-align: center;
+    border-bottom: 1px solid rgba(0 ,0 ,0 ,0.226);
+    padding: 1vmax;
+    width:20vmax;
+    margin:auto;
+    margin-bottom: 4vmax;
+}
+@media  screen and (max-width:600px) {
+
+    .productDetails{
+        flex-direction: column;
+         >div:last-child{
+        align-items: center;
+        .detailsBlock-1{
+            >h2{
+                font-size: 2.8vmax;
+                text-align: center;
+            }
+            >p{
+                font-size: 1vmax;
+                text-align: center;
+            }
+        }
+        .detailsBlock-2{
+            justify-content: center;
+            >span{
+                font-size: 1.5vmax;
+            }
+        }
+        .detailsBlock-3{
+            >h1{
+            font:700 3vmax "Roboto";
+            text-align: center;
+            }
+            >p{
+                font:400 2vmax "Roboto";
+                text-align: center; 
+                padding:2.5vmax 0;
+
+            }
+            .detailsBlock-3-1{
+            flex-direction: column;
+            .detailsBlock-3-1-1{
+                padding:2vmax 0;
+                >button{
+                    padding: 1.2vmax;
+                    width: 4vmax;
+                }
+                >input{
+                    padding:1vmax;
+                    width:4vmax;
+                    font:400 1.8vmax "Roboto";
+                }
+            }
+            & > button:last-child{
+                font:500 1.7vmax "Roboto";
+                padding:1.5vmax;
+                width:20vmax;
+                margin:3vmax 0;
+            }
+            }
+
+        }
+        .detailsBlock-4{
+            font:500 2.5vmax "Roboto";
+            >p{
+                font:300 1.8vmax "Roboto";
+            }
+        }
+        .submitReview{
+            font:500 1.7vmax "Roboto";
+            padding:1.5vmax;
+            width:20vmax;
+            margin:3vmax 0;
+        }
+    }
+}
+}
