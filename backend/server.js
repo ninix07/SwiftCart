@@ -9,7 +9,8 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 //config file import for PORT
-dotenv.config({ path: "backend/config/config.env" });
+dotenv.config({ path: "config/config.env" });
+
 
 //connecting with database
 connectDatabase();

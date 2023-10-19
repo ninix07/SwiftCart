@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 //connection to database using mongoose
 const connectDatabase = () => {
+
   mongoose
     .connect(process.env.DB_URI, {
       useNewUrlParser: true,
