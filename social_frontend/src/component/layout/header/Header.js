@@ -66,9 +66,15 @@ const Header = () => {
             </ul>
           </div>
           <div className="icons">
-            <BiSearchAlt2 className="iconsStyle" size={25} />
-            <BiCartAlt className="iconsStyle" size={25} />
-            <BiUser className="iconsStyle" size={25} />
+            <a href="/search" className="active">
+              <BiSearchAlt2 className="iconsStyle" size={25} />
+            </a>
+            <a href="/cart" className="active">
+              <BiCartAlt className="iconsStyle" size={25} />
+            </a>
+            <a href="/profile" className="active">
+              <BiUser className="iconsStyle" size={25} />
+            </a>
           </div>
         </div>
         <div onClick={clicked} className="mobile">

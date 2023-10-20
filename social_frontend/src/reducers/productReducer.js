@@ -1,3 +1,4 @@
+import { BiTrendingUp } from "react-icons/bi";
 import {
   ALL_PRODUCT_REQUEST,
   ALL_PRODUCT_SUCCESS,
@@ -12,17 +13,20 @@ export const productReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case ALL_PRODUCT_REQUEST:
       return {
+        ...state,
         loading: true,
         products: [],
       };
     case ALL_PRODUCT_SUCCESS:
       return {
+        ...state,
         loading: false,
         products: action.payload.products,
         productCount: action.payload.productsCount,
       };
     case ALL_PRODUCT_FAIL:
       return {
+        ...state,
         loading: false,
         error: action.payload,
       };
@@ -35,21 +39,23 @@ export const productReducer = (state = { products: [] }, action) => {
       return state;
   }
 };
-export const productDetailReducer = (state = { product: {} }, action) => {
+export const productdetailReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
       return {
-        loading: true,
         ...state,
+        loading: true,
       };
     case PRODUCT_DETAILS_SUCCESS:
       return {
+        ...state,
         loading: false,
         product: action.payload,
       };
     case PRODUCT_DETAILS_FAIL:
       return {
-        loading: false,
+        ...state,
+        loading: BiTrendingUp,
         error: action.payload,
       };
     case CLEAR_ERRORS:

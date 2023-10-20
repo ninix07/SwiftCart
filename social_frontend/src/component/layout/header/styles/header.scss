@@ -64,7 +64,7 @@ nav {
   .mobile {
     display: none;
   }
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 700px) {
     .navItems {
       display: flex;
       align-items: flex-start;
@@ -72,13 +72,14 @@ nav {
       flex-direction: column;
       position: fixed;
       top: 75px;
-      right: -300px;
+      right: -600px;
       width: 300px;
       height: 100vh;
       background: #2a3239;
       box-shadow: 0px, 40px, 60px rgba(255, 255, 255, 0.7);
       transition: 0.5s ease-in-out;
       padding-left: 10px;
+      z-index: 1;
       ul {
         align-items: flex-start;
         justify-content: flex-start;

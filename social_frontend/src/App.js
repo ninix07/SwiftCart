@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./component/Home/home";
 import ProductDetails from "./component/Product/ProductDetails.js";
 import Products from "./component/Product/products.js";
+import Search from "./component/Search/Search.js";
 function App() {
   return (
     <Router>
@@ -12,7 +13,9 @@ function App() {
       <Routes>
         <Route exact path="/" Component={Home} />
         <Route exact path="/product/:id" Component={ProductDetails} />
-        <Route exact path="/product" Component={Products} />
+        <Route exact path="/products" Component={Products} />
+        <Route exact path="/products/:keyword" Component={Products} />
+        <Route exact path="/search" Component={Search} />
       </Routes>
       <Footer />
     </Router>
