@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import "./styles/home.scss";
-import Product from "./product.js";
+import ProductCard from "./productCard.js";
 import MetaData from "../layout/metaData";
 import { clearError, getProduct } from "../../actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,7 +39,7 @@ const Home = () => {
           <h2 className="homeHeading">Featured Products</h2>
           <div className="container">
             {products &&
-              products.map((product) => <Product product={product} />)}
+              products.map((product) => <ProductCard product={product} />)}
           </div>
         </Fragment>
       )}
