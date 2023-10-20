@@ -37,7 +37,7 @@ const Home = () => {
             </a>
           </div>
           <h2 className="homeHeading">Featured Products</h2>
-          <div className="container">
+          <div className="container" id="container">
             {products &&
               products.map((product) => <ProductCard product={product} />)}
           </div>

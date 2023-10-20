@@ -44,12 +44,12 @@ const Header = () => {
           <div className="list">
             <ul>
               <li>
-                <a href="/home" className="active">
+                <a href="/" className="active">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/product" className="active">
+                <a href="/products" className="active">
                   Product
                 </a>
               </li>

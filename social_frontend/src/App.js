@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/" Component={Home} />
+        <Route path="/" exact Component={Home} />
         <Route exact path="/product/:id" Component={ProductDetails} />
         <Route exact path="/products" Component={Products} />
         <Route exact path="/products/:keyword" Component={Products} />
