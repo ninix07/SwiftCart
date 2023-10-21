@@ -72,7 +72,7 @@ const Header = () => {
             <a href="/cart" className="active">
               <BiCartAlt className="iconsStyle" size={25} />
             </a>
-            <a href="/profile" className="active">
+            <a href="/login" className="active">
               <BiUser className="iconsStyle" size={25} />
             </a>
           </div>

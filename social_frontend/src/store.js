@@ -5,10 +5,12 @@ import {
   productdetailReducer,
   productReducer,
 } from "./reducers/productReducer";
+import { userReducer } from "./reducers/userReducer";
 
 const reducer = combineReducers({
   products: productReducer,
   productDetails: productdetailReducer,
+  user: userReducer,
 });
 let initialState = {};
 const midleware = [thunk];
