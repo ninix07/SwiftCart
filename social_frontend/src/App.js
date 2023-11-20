@@ -7,10 +7,18 @@ import ProductDetails from "./component/Product/ProductDetails.js";
 import Products from "./component/Product/products.js";
 import Search from "./component/Search/Search.js";
 import Login from "./component/User/login";
+import store from "./store";
+import { loadUser } from "./actions/userAction";
+import React from "react";
+
 function App() {
+  React.useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
     <Router>
       <Header />
+
       <Routes>
         <Route path="/" exact Component={Home} />
         <Route exact path="/product/:id" Component={ProductDetails} />

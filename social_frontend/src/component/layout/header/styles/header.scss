@@ -1,5 +1,8 @@
 nav {
   display: flex;
+  position:fixed;
+  left: 0;
+  right: 0;
   align-items: center;
   justify-content: space-between;
   gap: 10%;
@@ -18,7 +21,7 @@ nav {
       justify-content: space-between;
       li {
         list-style: none;
-        padding: 0 1.3vw;
+        padding: 0 1.3rem;
         position: relative;
 
         a {
@@ -54,6 +57,11 @@ nav {
   .iconsStyle {
     padding: 0 1.3vw;
     color: #ffffff;
+  }
+  .image{
+    padding:0 1.3rem;
+    border-radius: 50%;
+    height: 2rem;
   }
   .iconsStyle:hover {
     color: #ff7a00;

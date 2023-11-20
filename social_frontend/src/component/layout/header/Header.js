@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { BiSearchAlt2, BiCartAlt, BiUser } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./styles/header.scss";
-
+import { useSelector } from "react-redux";
 const Header = () => {
   const [Active, setActive] = useState(false);
+  const { isAuthenticated, user } = useSelector((state) => state.user);
   const clicked = () => {
     setActive(!Active);
   };
@@ -73,7 +74,18 @@ const Header = () => {
               <BiCartAlt className="iconsStyle" size={25} />
             </a>
             <a href="/login" className="active">
-              <BiUser className="iconsStyle" size={25} />
+              {isAuthenticated ? (
+                <img
+                  src={
+                    user.profile_image.url
+                      ? user.profile_image.url
+                      : "./Profile.png"
+                  }
+                  className="image"
+                />
+              ) : (
+                <BiUser className="iconsStyle" size={25} />
+              )}
             </a>
           </div>
         </div>
