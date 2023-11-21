@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import { BiSearchAlt2, BiCartAlt, BiUser } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { MdOutlineShoppingBag, MdDashboard } from "react-icons/md";
+import { IoLogOut } from "react-icons/io5";
 import "./styles/header.scss";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
   const [Active, setActive] = useState(false);
+  const [profileMenu, setProfileMenu] = useState(false);
+  let history = useNavigate();
+
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const clicked = () => {
     setActive(!Active);
+  };
+  const ProfileActive = () => {
+    setProfileMenu(true);
+  };
+  const HoverProfileActive = () => {
+    setProfileMenu(false);
   };
   return (
     <div>
@@ -73,7 +85,7 @@ const Header = () => {
             <a href="/cart" className="active">
               <BiCartAlt className="iconsStyle" size={25} />
             </a>
-            <a href="/login" className="active">
+            <a href={isAuthenticated ? "" : "/login"} className="active">
               {isAuthenticated ? (
                 <img
                   src={
@@ -82,13 +94,52 @@ const Header = () => {
                       : "./Profile.png"
                   }
                   className="image"
+                  onMouseOver={ProfileActive}
                 />
               ) : (
                 <BiUser className="iconsStyle" size={25} />
               )}
+              <div
+                className={profileMenu ? "ProfileMenu Active" : "ProfileMenu"}
+                onMouseLeave={HoverProfileActive}
+              >
+                {user && user.role === "Admin" ? (
+                  <div
+                    onClick={() => {
+                      history("/dashboard");
+                    }}
+                  >
+                    {" "}
+                    <MdDashboard className="PMenuIcon" /> Dashboard
+                  </div>
+                ) : null}
+                <div
+                  onClick={() => {
+                    history("/order");
+                  }}
+                >
+                  <MdOutlineShoppingBag className="PMenuIcon" /> Orders
+                </div>
+                <div
+                  onClick={() => {
+                    history("/account");
+                  }}
+                >
+                  <BiUser className="PMenuIcon" /> Account
+                </div>
+                <div
+                  onClick={() => {
+                    history("/logout");
+                  }}
+                >
+                  <IoLogOut className="PMenuIcon" />
+                  Logout
+                </div>
+              </div>
             </a>
           </div>
         </div>
+
         <div onClick={clicked} className="mobile">
           <RxHamburgerMenu className="iconsStyle" size={25} />
         </div>

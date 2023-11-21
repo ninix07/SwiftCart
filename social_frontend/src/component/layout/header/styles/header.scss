@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   position:fixed;
@@ -52,8 +53,48 @@ nav {
         }
       }
     }
+    
+    
   }
-
+  .ProfileMenu{
+    background-color: tomato;
+    height:fit-content;
+    padding:2vh 2vw;
+    position:fixed;
+    right:0;
+    top:4rem;
+    margin:1vh 2vw;
+    border-radius: 5%;
+    opacity: 0;
+    & div {
+      font-size: 1rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 1vh;
+      cursor: pointer;
+    }
+    ::before{
+      content: "";
+      display: block;
+      position:absolute;
+      right:2.8rem;
+      top:-0.7rem;
+      border-bottom: 12px solid tomato;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      
+    }
+    
+}
+.ProfileMenu.Active{
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.PMenuIcon{
+  padding-top: 1vh;
+  margin-right: 0.5vw;
+  
+}
   .iconsStyle {
     padding: 0 1.3vw;
     color: #ffffff;
