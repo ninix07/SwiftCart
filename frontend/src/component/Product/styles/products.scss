@@ -1,0 +1,107 @@
+.productPage{
+    display: flex;
+    flex-direction: row;
+    .filterBox{
+        padding-left:1vmax;
+        padding-right:1vmax;
+        padding-top:0;
+        margin:4vmax 2vmax;
+        width: 15vmax;
+        height: fit-content;
+        border: 2px solid rgba(0,0,0,0.171);
+        border-radius: 1vmax;
+        & h1{
+            margin: 1vmax 0;
+            border-bottom: 1px solid rgba(0,0,0,0.171);
+            text-align:left;
+            
+            color:rgba(0,0,0,0.678);
+            font:300 2vmax "Roboto";
+        }
+       
+    }
+    .products{
+            display: flex;
+            justify-content: center;
+            width:80%;
+            flex-wrap: wrap;
+            margin:2vmax auto;
+        }
+    .categoryBox{
+        padding:0%;
+        .category-link{
+            list-style: none;
+            color:rgba(0,0,0,0.61);
+             font:300 1vmax "Roboto";
+             margin:0.4vmax;
+             cursor: pointer;
+             transition: all 0.5s;
+             &:hover{
+                color:tomato;
+             }
+        }
+    }
+}
+.productsHeading{
+    margin: 2vmax auto;
+    width:15vw;
+    border-bottom: 1px solid rgba(0,0,0,0.171);
+    text-align: center;
+    padding:2vmax;
+    color:rgba(0,0,0,0.678);
+    font:500 3vmax "Roboto";
+    
+}
+
+.paginationBox{
+    display: flex;
+    justify-content: center;
+    margin: 6vmax;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding:0;
+}
+.page-item{
+    background-color: white;
+    list-style: none;
+    border:1px solid rgba(0,0,0,0.178);
+    padding:1vmax 1.5vmax;
+    transition: all 0.3s;
+    cursor:pointer;
+    &:first-child{
+        border-radius: 5px 0 0 5px;
+    }
+    &:last-child{
+        border-radius: 0 5px 5px 0;
+    }
+    &:hover{
+        background-color: gainsboro;
+    }
+}
+.page-link{
+    text-decoration: none;
+    color:rgb(80,80,80);
+    transition:all 0.3s;
+    &:hover{
+        color:black
+    }
+}
+.pageItemActive{
+    background-color: tomato;
+    color: white;
+}
+
+@media screen and (max-width: 768px){
+    .productPage{flex-direction: column-reverse;
+        .filterBox{
+            display: flex;
+            flex-direction: column;
+            margin: 2vmax auto;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
