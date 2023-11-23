@@ -37,4 +37,5 @@ router
 router
   .route("/admin/user/:id")
   .put(isUserAuthenticated, isAdmin("admin"), updateRoles);
+
 module.exports = router;
