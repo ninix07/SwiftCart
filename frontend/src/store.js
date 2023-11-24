@@ -6,11 +6,13 @@ import {
   productReducer,
 } from "./reducers/productReducer";
 import { userReducer } from "./reducers/userReducer";
+import { profileReducer } from "./reducers/profileReducer";
 
 const reducer = combineReducers({
   products: productReducer,
   productDetails: productdetailReducer,
   user: userReducer,
+  profile: profileReducer,
 });
 let initialState = {};
 const midleware = [thunk];

@@ -63,6 +63,7 @@ nav {
     margin:1vh 2vw;
     border-radius: 5%;
     opacity: 0;
+    z-index: 100;
     & div {
       font-size: 1rem;
       font-weight: bold;

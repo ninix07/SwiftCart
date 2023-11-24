@@ -7,6 +7,7 @@ import "./styles/header.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../../actions/userAction";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [Active, setActive] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
@@ -26,7 +27,7 @@ const Header = () => {
     <div>
       <nav>
         <div className="logo">
-          <a href="/">
+          <Link to="/">
             <svg
               id="logo-38"
               width="78"
@@ -52,40 +53,40 @@ const Header = () => {
                 fill="#FFBC7D"
               ></path>{" "}
             </svg>
-          </a>
+          </Link>
         </div>
         <div className={`navItems ${Active ? "active" : ""}`}>
           <div className="list">
             <ul>
               <li>
-                <a href="/" className="active">
+                <Link to="/" className="active">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/products" className="active">
+                <Link to="/products" className="active">
                   Product
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="active">
+                <Link to="/about" className="active">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="active">
+                <Link to="/contact" className="active">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="icons">
-            <a href="/search" className="active">
+            <Link to="/search" className="active">
               <BiSearchAlt2 className="iconsStyle" size={25} />
-            </a>
-            <a href="/cart" className="active">
+            </Link>
+            <Link to="/cart" className="active">
               <BiCartAlt className="iconsStyle" size={25} />
-            </a>
+            </Link>
 
             {isAuthenticated ? (
               <img
@@ -98,9 +99,9 @@ const Header = () => {
                 onMouseOver={ProfileActive}
               />
             ) : (
-              <a href="/login" className="active">
+              <Link to="/login" className="active">
                 <BiUser className="iconsStyle" size={25} />
-              </a>
+              </Link>
             )}
             <div
               className={profileMenu ? "ProfileMenu Active" : "ProfileMenu"}
