@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "./styles/updateProfile.scss";
 import Loader from "../layout/loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,7 +60,7 @@ const UpdateProfile = () => {
         type: UPDATE_PROFILE_RESET,
       });
     }
-  }, [dispatch, error, alert, history, isUpdated]);
+  }, [dispatch, error, alert, user, history, isUpdated]);
   return (
     <Fragment>
       {loading ? (
@@ -95,7 +95,7 @@ const UpdateProfile = () => {
                     required
                     name="email"
                     value={email}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 

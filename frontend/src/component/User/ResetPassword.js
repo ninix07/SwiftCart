@@ -1,33 +1,33 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "./styles/UpdatePassword.scss";
+import "./styles/ResetPassword.scss";
 import Loader from "../layout/loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { clearError } from "../../actions/userAction";
-import { updatePassword } from "../../actions/profileAction";
+import { clearError, resetPassword } from "../../actions/userAction";
+
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+
 import { useAlert } from "react-alert";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstant";
 import MetaData from "../layout/metaData";
 const UpdatePassword = () => {
   const dispatch = useDispatch();
+  const match = useParams();
   const alert = useAlert();
   const history = useNavigate();
 
-  const { error, isUpdated, loading } = useSelector((state) => state.profile);
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  const { error, success, loading } = useSelector(
+    (state) => state.forgotPassword
+  );
+  const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const updatePasswordSubmit = (e) => {
+  const resetPasswordSubmit = (e) => {
     e.preventDefault();
     const myForm = new FormData();
-    myForm.set("oldPassword", oldPassword);
-    myForm.set("newPassword", newPassword);
+    myForm.set("password", password);
     myForm.set("confirmPassword", confirmPassword);
-    console.log(myForm);
-    dispatch(updatePassword(myForm));
+    dispatch(resetPassword(match.token, myForm));
   };
 
   useEffect(() => {
@@ -35,51 +35,40 @@ const UpdatePassword = () => {
       alert.error(error);
       dispatch(clearError());
     }
-    if (isUpdated) {
+    if (success) {
       alert.success("Password Updated Successfully");
-
-      history("/account");
+      history("/login");
       dispatch({
         type: UPDATE_PASSWORD_RESET,
       });
     }
-  }, [dispatch, error, alert, history, isUpdated]);
+  }, [dispatch, error, alert, history, success]);
   return (
     <Fragment>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Update Password" />
-          <div className="updatePasswordContainer">
-            <div className="updatePasswordBox">
-              <h2 className="updatePasswordHeading">Update Password</h2>
+          <MetaData title="Reset Password" />
+          <div className="resetPasswordContainer">
+            <div className="resetPasswordBox">
+              <h2 className="resetPasswordHeading">Reset Password</h2>
               <form
-                className="updatePasswordForm"
+                className="resetPasswordForm"
                 encType="multipart/form-data"
-                onSubmit={updatePasswordSubmit}
+                onSubmit={resetPasswordSubmit}
               >
-                <div className="loginPassword">
-                  <VpnKeyIcon />
-                  <input
-                    type="password"
-                    placeholder="Old Password"
-                    required
-                    value={oldPassword}
-                    onChange={(e) => setOldPassword(e.target.value)}
-                  />
-                </div>
-                <div className="loginPassword">
+                <div>
                   <LockOpenIcon />
                   <input
                     type="password"
                     placeholder="New Password"
                     required
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="loginPassword">
+                <div>
                   <LockIcon />
                   <input
                     type="password"
@@ -92,7 +81,7 @@ const UpdatePassword = () => {
                 <input
                   type="submit"
                   value="Update Password"
-                  className="updatePasswordBtn"
+                  className="resetPasswordBtn"
                 />
               </form>
             </div>
