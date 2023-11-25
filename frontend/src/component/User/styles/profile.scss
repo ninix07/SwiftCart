@@ -1,4 +1,13 @@
-.profileContainer {
+.profile{
+     & h1 {
+        color: rgba(0, 0, 0, 0.555);
+        font: 500 2.2vmax "Roboto";
+       text-align: center;
+       width: 10%;
+       margin: 2vh auto;
+       border-bottom: 2px solid rgba(0, 0, 0, 0.222);
+    }
+    .profileContainer {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -15,13 +24,8 @@
         align-items: center;
         
         &:first-child {
-           
-            > h1 {
-                color: rgba(0, 0, 0, 0.555);
-                font: 500 2.2vmax "Roboto";
-            }
             > img{
-                width: 20vmax;
+                max-width: 20vmax;
                 border-radius: 100%;
                 transition: all 0.5s;
                 &:hover{
@@ -91,16 +95,21 @@
 
    
 }
+}
 @media screen and (max-width: 760px) {
+   .profile{ 
+    > h1{
+        font: 400 3vmax "Roboto"; 
+        width:30%;
+        
+    }
     .profileContainer {
+        
         flex-direction: column;
         > div {
             &:first-child {
                 height: fit-content;
-                > h1 {
-                    font: 400 1.7vmax "Roboto"; 
-                    transform: translateY(-2vmax);
-                }
+                
                 >a {
                     font: 400 1.7vmax "Roboto"; 
                     padding:1vmax;
@@ -135,4 +144,5 @@
             }
         }
     }
+}
 }

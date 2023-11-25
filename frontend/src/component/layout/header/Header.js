@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiSearchAlt2, BiCartAlt, BiUser } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineShoppingBag, MdDashboard } from "react-icons/md";
@@ -23,6 +23,28 @@ const Header = () => {
   const HoverProfileActive = () => {
     setProfileMenu(false);
   };
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const isNavElement = event.target.closest(".navItems");
+
+      if (isNavElement) {
+        setActive(false);
+      }
+    };
+    const handleScroll = () => {
+      if (Active) {
+        window.scrollTo(0, 0);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    document.body.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleDocumentClick);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [Active]);
+
   return (
     <div>
       <nav>
@@ -97,6 +119,9 @@ const Header = () => {
                 }
                 className="image"
                 onMouseOver={ProfileActive}
+                onClick={() => {
+                  history("/account");
+                }}
               />
             ) : (
               <Link to="/login" className="active">

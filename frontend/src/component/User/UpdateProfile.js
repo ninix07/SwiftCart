@@ -8,7 +8,7 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import FaceIcon from "@material-ui/icons/Face";
 import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
-import { UPDATE_POROFILE_RESET } from "../../constants/userConstant";
+import { UPDATE_PROFILE_RESET } from "../../constants/userConstant";
 import MetaData from "../layout/metaData";
 
 const UpdateProfile = () => {
@@ -57,7 +57,7 @@ const UpdateProfile = () => {
       dispatch(loadUser());
       history("/account");
       dispatch({
-        type: UPDATE_POROFILE_RESET,
+        type: UPDATE_PROFILE_RESET,
       });
     }
   }, [dispatch, error, alert, history, isUpdated]);

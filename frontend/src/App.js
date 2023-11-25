@@ -13,6 +13,7 @@ import store from "./store";
 import { loadUser } from "./actions/userAction";
 import ProtectedRoute from "./component/Routes/ProtectedRoute";
 import React from "react";
+import UpdatePassword from "./component/User/UpdatePassword.js";
 
 function App() {
   const [authChecked, setAuthChecked] = React.useState(false);
@@ -39,6 +40,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route exact path="/account" Component={Profile} />
             <Route exact path="/me/update" Component={UpdateProfile} />
+            <Route exact path="/password/update" Component={UpdatePassword} />
           </Route>
         </Routes>
 
