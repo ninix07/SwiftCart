@@ -11,7 +11,7 @@ import { useAlert } from "react-alert";
 import { useNavigate, useParams } from "react-router-dom";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstant";
 import MetaData from "../layout/metaData";
-const UpdatePassword = () => {
+const ResetPassword = () => {
   const dispatch = useDispatch();
   const match = useParams();
   const alert = useAlert();
@@ -92,4 +92,4 @@ const UpdatePassword = () => {
   );
 };
 
-export default UpdatePassword;
+export default ResetPassword;

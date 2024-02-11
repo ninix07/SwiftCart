@@ -32,7 +32,7 @@ const Products = () => {
     loading,
     error,
     resultPerPage,
-    productCount,
+    // productCount,
     filteredProductsCount,
   } = useSelector((state) => state.products);
   const setCurrentPageNo = (e) => {
@@ -48,7 +48,7 @@ const Products = () => {
       dispatch(clearError());
     }
     dispatch(getProduct(keyword, currentPage, price, category));
-  }, [dispatch, keyword, currentPage, error, price, category]);
+  }, [dispatch, keyword, currentPage, alert, error, price, category]);
   let count = filteredProductsCount;
   return (
     <Fragment>

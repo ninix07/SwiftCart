@@ -112,6 +112,7 @@ const Header = () => {
 
             {isAuthenticated ? (
               <img
+                alt=""
                 src={
                   user.profile_image.url
                     ? user.profile_image.url
