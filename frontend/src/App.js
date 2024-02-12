@@ -16,6 +16,7 @@ import React from "react";
 import UpdatePassword from "./component/User/UpdatePassword.js";
 import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
+import Cart from "./component/Cart/cart.js";
 function App() {
   const [authChecked, setAuthChecked] = React.useState(false);
   React.useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
             path="/password/reset/:token"
             Component={ResetPassword}
           />
+          <Route exact path="/cart" Component={Cart} />
         </Routes>
 
         <Footer />

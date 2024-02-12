@@ -145,21 +145,27 @@ const Header = () => {
               ) : null}
               <div
                 onClick={() => {
-                  history("/order");
+                  if (profileMenu) {
+                    history("/order");
+                  }
                 }}
               >
                 <MdOutlineShoppingBag className="PMenuIcon" /> Orders
               </div>
               <div
                 onClick={() => {
-                  history("/account");
+                  if (profileMenu) {
+                    history("/account");
+                  }
                 }}
               >
                 <BiUser className="PMenuIcon" /> Account
               </div>
               <div
                 onClick={() => {
-                  dispatch(logout());
+                  if (profileMenu) {
+                    dispatch(logout());
+                  }
                 }}
               >
                 <IoLogOut className="PMenuIcon" />

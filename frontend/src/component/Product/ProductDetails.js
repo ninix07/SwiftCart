@@ -9,24 +9,28 @@ import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/loader/Loader";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/metaData";
-
+import { addItemsToCart } from "../../actions/cartAction.js";
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const alert = useAlert();
-  const [quantity , setQuantity]=useState(1);
+  const [quantity, setQuantity] = useState(1);
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
-  const increaseQuantity=()=>{
-    if(product.stock<= quantity) return;
-    const temp_quantity= quantity+1;
+  const increaseQuantity = () => {
+    if (product.stock <= quantity) return;
+    const temp_quantity = quantity + 1;
     setQuantity(temp_quantity);
-  } ; 
-  const decreaseQuantity=() =>{
-    if(quantity <= 1) return;
-    const temp_quantity= quantity-1;
+  };
+  const decreaseQuantity = () => {
+    if (quantity <= 1) return;
+    const temp_quantity = quantity - 1;
     setQuantity(temp_quantity);
+  };
+  const addToCartHandler = () => {
+    dispatch(addItemsToCart(id, quantity));
+    alert.success("Item has been added to cart successfully.");
   };
   useEffect(() => {
     if (error) {
@@ -92,7 +96,7 @@ const ProductDetails = () => {
                     <input readOnly value={quantity} type="number" />
                     <button onClick={increaseQuantity}>+</button>
                   </div>
-                  <button>Add to Cart</button>
+                  <button onClick={addToCartHandler}>Add to Cart</button>
                 </div>
                 <p>
                   Status:
