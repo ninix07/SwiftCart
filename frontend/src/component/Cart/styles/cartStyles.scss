@@ -85,6 +85,27 @@
     }
   }
 }
+.noProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 12vmax;
+  > p {
+    font: 300 2rem "Roboto";
+  }
+  > button {
+    background-color: tomato;
+    padding: 0.8vmax 4vmax;
+    width: 20%;
+    border-radius: 30px;
+    color: white;
+    font: 300 0.8rem "Roboto";
+    margin: 1vmax 4vmax;
+    border: none;
+    cursor: pointer;
+  }
+}
 
 @media screen and (max-width: 720px) {
   .cartPage {

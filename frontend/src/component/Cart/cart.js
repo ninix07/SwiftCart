@@ -2,9 +2,11 @@ import React, { Fragment } from "react";
 import "./styles/cartStyles.scss";
 import CartItemCard from "./CartItemCard";
 import { useSelector, useDispatch } from "react-redux";
-import { addItemsToCart } from "../../actions/cartAction";
+import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
+  const history = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
   const increaseQuantity = (id, quantity, stock) => {
     const tempQty = quantity + 1;
@@ -20,6 +22,9 @@ const Cart = () => {
     }
     dispatch(addItemsToCart(id, tempQty));
   };
+  const removeCard = (id) => {
+    dispatch(removeItemsFromCart(id));
+  };
   return (
     <Fragment>
       <div className="cartPage">
@@ -28,42 +33,66 @@ const Cart = () => {
           <p>Quantity</p>
           <p>Subtotal</p>
         </div>
-        {cartItems &&
-          cartItems.map((item) => (
-            <div className="cartContainer">
-              <CartItemCard item={item} />
-              <div className="cartInput">
-                <button
-                  onClick={() => decreaseQuantity(item.product, item.quantity)}
-                >
-                  -
-                </button>
-                <input type="number" value={item.quantity} readOnly />
-                <button
-                  onClick={() =>
-                    increaseQuantity(item.product, item.quantity, item.stock)
-                  }
-                >
-                  +
-                </button>
+        {cartItems.length === 0 ? (
+          <div className="noProduct">
+            <p>No Items in Cart. Please Add Some.</p>
+            <button
+              onClick={() => {
+                history("/products");
+              }}
+            >
+              Products
+            </button>
+          </div>
+        ) : (
+          <Fragment>
+            {cartItems &&
+              cartItems.map((item) => (
+                <div className="cartContainer" key={item.id}>
+                  <CartItemCard item={item} removeCard={removeCard} />
+                  <div className="cartInput">
+                    <button
+                      onClick={() =>
+                        decreaseQuantity(item.product, item.quantity)
+                      }
+                    >
+                      -
+                    </button>
+                    <input type="number" value={item.quantity} readOnly />
+                    <button
+                      onClick={() =>
+                        increaseQuantity(
+                          item.product,
+                          item.quantity,
+                          item.stock
+                        )
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="cartSubtotal">
+                    {`Rs.${item.quantity * item.price}`}
+                  </div>
+                </div>
+              ))}
+
+            <div className="cartTotal">
+              <div></div>
+              <div className="TotalBox">
+                <p>Total Amount</p>
+                <p>{`Rs.${cartItems.reduce(
+                  (acc, item) => acc + item.quantity * item.price,
+                  0
+                )}`}</p>
               </div>
-              <div className="cartSubtotal">
-                {`Rs.${item.quantity * item.price}`}
+              <div></div>
+              <div className="checkOut">
+                <button>Check Out</button>
               </div>
             </div>
-          ))}
-
-        <div className="cartTotal">
-          <div></div>
-          <div className="TotalBox">
-            <p>Total Amount</p>
-            <p>{`Rs.600`}</p>
-          </div>
-          <div></div>
-          <div className="checkOut">
-            <button>Check Out</button>
-          </div>
-        </div>
+          </Fragment>
+        )}
       </div>
     </Fragment>
   );
