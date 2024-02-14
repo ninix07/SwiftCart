@@ -1,13 +1,15 @@
-
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10%;
   background-color: #1b2430;
   padding: 20px 50px;
   .logo {
     flex: 0.5;
+    .logo-img {
+      height: 4rem;
+      border-radius: 50%;
+    }
   }
   .navItems {
     display: flex;
@@ -39,61 +41,54 @@ nav {
         a::after {
           width: 0;
         }
-
-        
       }
     }
-    
-    
   }
-  .ProfileMenu{
+  .ProfileMenu {
     background-color: tomato;
-    height:fit-content;
-    padding:2vh 2vw;
-    position:fixed;
-    right:0;
-    top:4rem;
-    margin:1vh 2vw;
+    height: fit-content;
+    padding: 2vh 2vw;
+    position: fixed;
+    right: 0;
+    top: 4rem;
+    margin: 1rem 1rem;
     border-radius: 5%;
     opacity: 0;
     z-index: 100;
     & div {
       font-size: 1rem;
       font-weight: bold;
-      color:white;
+      color: white;
       margin-top: 1vh;
       cursor: pointer;
     }
-    ::before{
+    ::before {
       content: "";
       display: block;
-      position:absolute;
-      right:2.8rem;
-      top:-0.7rem;
+      position: absolute;
+      right: 2.8rem;
+      top: -0.7rem;
       border-bottom: 12px solid tomato;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
-      
     }
-    
-}
-.ProfileMenu.Active{
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-.PMenuIcon{
-  padding-top: 1vh;
-  margin-right: 0.5vw;
-  
-}
+  }
+  .ProfileMenu.Active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .PMenuIcon {
+    padding-top: 1vh;
+    margin-right: 0.5vw;
+  }
   .iconsStyle {
-    padding: 0 1.3vw;
+    padding: 0 1vw;
     color: #ffffff;
   }
-  .image{
-    padding:0 1.3rem;
+  .image {
+    padding: 0 1vw;
     border-radius: 50%;
-    height: 2rem;
+    height: 1.8rem;
   }
   .iconsStyle:hover {
     color: #ff7a00;
@@ -104,22 +99,22 @@ nav {
   .mobile {
     display: none;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 720px) {
     .navItems {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
       position: fixed;
-      top: 75px;
+      top: 80px;
       right: -600px;
-      width: 300px;
+      width: 200px;
       height: 100vh;
-      background: #2a3239;
+      background-color: #1b2430;
       box-shadow: 0px, 40px, 60px rgba(255, 255, 255, 0.7);
       transition: 0.5s ease-in-out;
       padding-left: 10px;
-   
+
       ul {
         align-items: flex-start;
         justify-content: flex-start;
@@ -127,7 +122,6 @@ nav {
 
         li {
           margin-top: 20px;
-         
         }
       }
       .icons {
@@ -138,13 +132,11 @@ nav {
     .navItems.active {
       right: 0px;
       z-index: 100;
-      
     }
     .mobile {
       display: block;
-      
     }
-    .ProfileMenu.Active{
+    .ProfileMenu.Active {
       display: none;
     }
   }

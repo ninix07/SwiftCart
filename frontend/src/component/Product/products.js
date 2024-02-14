@@ -26,6 +26,7 @@ const Products = () => {
   const alert = useAlert();
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
+  const [comittedPrice, setComittedPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
   const {
     products,
@@ -41,14 +42,17 @@ const Products = () => {
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
+  const priceComittedHandler = (event, newPrice) => {
+    setComittedPrice(newPrice);
+  };
   const keyword = match.keyword;
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearError());
     }
-    dispatch(getProduct(keyword, currentPage, price, category));
-  }, [dispatch, keyword, currentPage, alert, error, price, category]);
+    dispatch(getProduct(keyword, currentPage, comittedPrice, category));
+  }, [dispatch, keyword, currentPage, alert, error, comittedPrice, category]);
   let count = filteredProductsCount;
   return (
     <Fragment>
@@ -65,6 +69,7 @@ const Products = () => {
               <Slider
                 value={price}
                 onChange={priceHandler}
+                onChangeCommitted={priceComittedHandler}
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 min={0}
@@ -90,7 +95,6 @@ const Products = () => {
                 ))}
             </div>
           </div>
-          {console.log(`Filtered Product COunt :${count}`)}
           {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination

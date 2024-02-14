@@ -1,45 +1,48 @@
-.searchBox{
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:rgb(214,214,214);
-    position: fixed;
-    left: 0%;
-    >input[type="text"]{
-        box-shadow: 0 0 5px rgba(0,0,0,0.274);
-        background-color: white;
-        border: none;
-        color:rgba(0,0,0,0.637);
-        padding:1vmax 2vmax;
-        width:50%;
-        outline:none;
-        border-radius:0%;
-        font:300 1.1vmax cursive;
-        box-sizing: border-box;
-        height: 8%;
-    }
-    >input[type="submit"]{
-        box-shadow: 0 0 5px rgba(0,0,0,0.274);
-        background-color:tomato;
-        border: none;
-        color:rgba(0,0,0,0.637);
-        padding:1vmax 2vmax;
-        width:10%;
-        border-radius: 0%;
-        outline:none;
-        border-radius:0%;
-        font:300 1.1vmax "Roboto";
-        box-sizing: border-box;
-        transition: all 0.5s;
-        height: 8%;
-        &:hover{
-            background-color: bisque;
-        }
-    }
-  
+.searchBox {
+  width: 100vw;
+  height: 90vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(214, 214, 214);
 
-
+  > input[type="text"] {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    background-color: white;
+    border: none;
+    color: rgba(0, 0, 0, 0.637);
+    padding: 1vmax 2vmax;
+    width: 50%;
+    outline: none;
+    border-radius: 0%;
+    font: 300 1.1vmax cursive;
+    box-sizing: border-box;
+    height: 8%;
+  }
+  > input[type="submit"] {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    background-color: tomato;
+    border: none;
+    color: rgba(0, 0, 0, 0.637);
+    padding: 1vmax 2vmax;
+    width: 15%;
+    border-radius: 0%;
+    outline: none;
+    border-radius: 0%;
+    font: 300 1.1vmax "Roboto";
+    box-sizing: border-box;
+    transition: all 0.5s;
+    height: 8%;
+    &:hover {
+      background-color: bisque;
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .searchBox {
+    > input[type="submit"] {
+      width: 15%;
+    }
+  }
 }

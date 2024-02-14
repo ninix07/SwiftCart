@@ -10,12 +10,10 @@
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
   border-radius: 1vmax;
-  
-
-
 
   img {
     width: 14vmax;
+    min-height: 25vh;
     border-radius: 0.9vmax 0.9vmax 0 0;
   }
   .product-review {
@@ -39,7 +37,6 @@
     margin: 1vh 0.5vw;
     margin-bottom: 0;
     word-wrap: break-word;
-   
   }
   .price {
     margin: 1vh 0.5vw;
