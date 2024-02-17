@@ -3,7 +3,7 @@ import "./styles/login.scss";
 import Loader from "../layout/loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { clearError, login, register } from "../../actions/userAction";
-import { Link, redirect, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
@@ -39,11 +39,9 @@ const Login = () => {
       dispatch(clearError());
     }
     if (isAuthenticated) {
-      console.log(location.search);
-      console.log(redirect);
       history(`/${redirect}`);
     }
-  }, [dispatch, error, alert, history, isAuthenticated]);
+  }, [dispatch, error, redirect, alert, history, isAuthenticated]);
   const switchTabs = (e, tab) => {
     if (tab === "login") {
       switcherTab.current.classList.add("shiftToNeutral");

@@ -11,9 +11,12 @@ import PublicIcon from "@material-ui/icons/Public";
 import PhoneIcon from "@material-ui/icons/Phone";
 import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStation";
 import { Country, State } from "country-state-city";
+import CheckoutSteps from "./checkoutStep.js";
+import { useNavigate } from "react-router-dom";
 const Shipping = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  const history = useNavigate();
   const { shippingInfo } = useSelector((state) => state.cart);
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
@@ -21,10 +24,21 @@ const Shipping = () => {
   const [country, setCountry] = useState(shippingInfo.country);
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
-  const shippingSubmit = () => {};
+  const shippingSubmit = (e) => {
+    e.preventDefault();
+    if (phoneNo.length < 10 || phoneNo.length > 10) {
+      alert.error("Phone Number should be of 10 digits.");
+      return;
+    }
+    dispatch(
+      saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+    );
+    history("/order/confirm");
+  };
   return (
     <Fragment>
       <MetaData title="Shipping Details" />
+      <CheckoutSteps activeStep={0} />
       <div className="shippingContainer">
         <div className="shippingBox">
           <div className="shippingHeading">Shipping Details</div>
