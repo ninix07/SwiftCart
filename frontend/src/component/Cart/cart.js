@@ -4,6 +4,7 @@ import CartItemCard from "./CartItemCard";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
 import { useNavigate } from "react-router-dom";
+import MetaData from "../layout/metaData";
 const Cart = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -25,8 +26,12 @@ const Cart = () => {
   const removeCard = (id) => {
     dispatch(removeItemsFromCart(id));
   };
+  const checkOutHandler = () => {
+    history("/login?redirect=shipping");
+  };
   return (
     <Fragment>
+      <MetaData title="Cart" />
       <div className="cartPage">
         <div className="cartHeader">
           <p>Product</p>
@@ -88,7 +93,7 @@ const Cart = () => {
               </div>
               <div></div>
               <div className="checkOut">
-                <button>Check Out</button>
+                <button onClick={checkOutHandler}>Check Out</button>
               </div>
             </div>
           </Fragment>

@@ -3,7 +3,7 @@ import "./styles/login.scss";
 import Loader from "../layout/loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { clearError, login, register } from "../../actions/userAction";
-import { Link } from "react-router-dom";
+import { Link, redirect, useLocation } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const alert = useAlert();
   const history = useNavigate();
   const { loading, error, isAuthenticated } = useSelector(
@@ -31,13 +32,16 @@ const Login = () => {
     password: "",
   });
   const { name, email, password } = user;
+  const redirect = location.search ? location.search.split("=")[1] : "account";
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearError());
     }
     if (isAuthenticated) {
-      history(`/account`);
+      console.log(location.search);
+      console.log(redirect);
+      history(`/${redirect}`);
     }
   }, [dispatch, error, alert, history, isAuthenticated]);
   const switchTabs = (e, tab) => {
