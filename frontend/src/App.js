@@ -18,6 +18,7 @@ import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import Cart from "./component/Cart/cart.js";
 import Shipping from "./component/Shipping/Shipping.js";
+import ConfirmOrder from "./component/Shipping/ConfirmOrder.js";
 function App() {
   const [authChecked, setAuthChecked] = React.useState(false);
   React.useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
             <Route exact path="/me/update" Component={UpdateProfile} />
             <Route exact path="/password/update" Component={UpdatePassword} />
             <Route exact path="/shipping" Component={Shipping} />
+            <Route exact path="/order/confirm" Component={ConfirmOrder} />
           </Route>
           <Route exact path="/password/forgot" Component={ForgotPassword} />
           <Route

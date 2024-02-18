@@ -1,7 +1,6 @@
 .Banner {
-  background-image: linear-gradient(to bottom, #1b2430, #2a3239),
-    url("../../../image/background.jpeg");
-  height: 100vmin;
+  background-image: linear-gradient(to bottom, #1b2430, #2a3239);
+  height: 90vh;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -10,29 +9,36 @@
   color: #ffffff;
   & h1 {
     font-weight: 600;
+    color: tomato;
     font-size: 2rem;
     margin: 5vmin;
   }
   & p {
     font-weight: 300;
     font-size: 2rem;
+    color: tomato;
     margin: 3vmin;
   }
   & a {
+    text-decoration: none;
     & button {
       margin-bottom: 5vmax;
       cursor: pointer;
       background-color: #ffffff;
-      border: 1px solid #ffffff;
-      border-radius: 0rem;
+      border: none;
+      border-radius: 0.5rem;
       padding: 1vmax;
       transition: all 0.5s;
-      width: 9vmax;
+      width: 10rem;
       font: 500 1vmax;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2%;
     }
   }
   & a :hover {
-    background-color: #ff7a00;
+    background-color: tomato;
     color: white;
   }
 }
@@ -52,21 +58,25 @@
   justify-content: center;
   margin: 6vmax auto;
   width: 80%;
-  
 }
 
 @media screen and (max-width: 768px) {
-  .Banner h1 {
-    margin: 3vh;
-    font-size: 1rem;
-  }
-
-  .Banner p {
-    margin: 1vh;
-    font-size: 1rem;
+  .Banner {
+    height: 80vh;
+    & h1 {
+      margin: 3vh;
+      font-size: 2rem;
+    }
+    & p {
+      margin: 1vh;
+      font-size: 1.5rem;
+    }
   }
 
   .Banner a button {
-    font-size: 0.7rem;
+    font-size: 1rem;
+  }
+  .container {
+    width: 100%;
   }
 }
