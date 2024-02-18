@@ -44,7 +44,11 @@ const Profile = () => {
                     <h4>Email</h4>
                     <p>{user.email}</p>
                   </div>
+
                   <div>
+                    {user && user.role === "Admin" ? (
+                      <Link to="/dashboard">Dashboard</Link>
+                    ) : null}
                     <Link to="/orders"> My Orders</Link>
                     <Link to="/password/update">Change Password</Link>
                     <Link

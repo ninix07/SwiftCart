@@ -15,9 +15,7 @@ const Header = () => {
   let history = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((state) => state.user);
-  const clicked = () => {
-    setActive(!Active);
-  };
+
   const ProfileActive = () => {
     setProfileMenu(true);
   };
@@ -27,7 +25,13 @@ const Header = () => {
   useEffect(() => {
     const handleDocumentClick = (event) => {
       const isNavElement = event.target.closest(".navItems");
-
+      const isBurger = event.target.closest(".mobile");
+      if (isBurger) {
+        setActive(!Active);
+      }
+      if (Active && !isBurger) {
+        setActive(false);
+      }
       if (isNavElement) {
         setActive(false);
       }
@@ -106,53 +110,10 @@ const Header = () => {
                 <BiUser className="iconsStyle" size={25} />
               </Link>
             )}
-            <div
-              className={profileMenu ? "ProfileMenu Active" : "ProfileMenu"}
-              onMouseLeave={HoverProfileActive}
-            >
-              {user && user.role === "Admin" ? (
-                <div
-                  onClick={() => {
-                    history("/dashboard");
-                  }}
-                >
-                  {" "}
-                  <MdDashboard className="PMenuIcon" /> Dashboard
-                </div>
-              ) : null}
-              <div
-                onClick={() => {
-                  if (profileMenu) {
-                    history("/order");
-                  }
-                }}
-              >
-                <MdOutlineShoppingBag className="PMenuIcon" /> Orders
-              </div>
-              <div
-                onClick={() => {
-                  if (profileMenu) {
-                    history("/account");
-                  }
-                }}
-              >
-                <BiUser className="PMenuIcon" /> Account
-              </div>
-              <div
-                onClick={() => {
-                  if (profileMenu) {
-                    dispatch(logout());
-                  }
-                }}
-              >
-                <IoLogOut className="PMenuIcon" />
-                Logout
-              </div>
-            </div>
           </div>
         </div>
 
-        <div onClick={clicked} className="mobile">
+        <div className="mobile">
           <RxHamburgerMenu className="iconsStyle" size={25} />
         </div>
       </nav>
