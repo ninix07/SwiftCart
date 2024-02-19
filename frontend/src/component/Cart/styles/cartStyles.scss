@@ -114,24 +114,25 @@
     .cartHeader {
       width: 100%;
       font: 300 1.2rem "Roboto";
-      grid-template-columns: 3fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
     }
 
     .cartContainer {
       width: 100%;
+      grid-template-columns: 2fr 1fr 1fr;
       .cartInput {
-        height: 20vmax;
+        height: 15vmax;
         > button {
-          padding: 1.5vmax;
+          padding: 0.3rem;
         }
         > input {
-          padding: 1.5vmax;
+          padding: 0.5rem;
           font: 400 1.2rem "Roboto";
         }
       }
       .cartSubtotal {
-        padding: 1.5vmax;
-        height: 20vmax;
+        padding: 0.5rem;
+        height: 15vmax;
         font: 300 1.3rem "Roboto";
       }
     }

@@ -126,7 +126,9 @@ nav {
       }
       .icons {
         display: flex;
-        margin-top: 20px;
+        gap: 10%;
+        align-items: center;
+        margin: 20px;
       }
     }
     .navItems.active {

@@ -1,14 +1,16 @@
 .confirmOrderPage {
   height: 100vh;
-  background-color: white;
+  background-color: #e2e0e0;
   display: grid;
   grid-template-columns: 6fr 4fr;
   > div:last-child {
     border-left: 1px solid rgba(0, 0, 0, 0.247);
   }
   .confirmShippingArea {
-    padding: 5vmax;
-    padding-bottom: 0%;
+    padding: 2vmax;
+    background-color: white;
+    margin: 2vmax;
+    border-radius: 4px;
     > p {
       font: 400 2rem "Roboto";
     }
@@ -29,12 +31,19 @@
     }
   }
   .confirmCartItems {
-    padding: 5vmax;
-    padding-top: 2vmax;
+    padding: 3vmax;
+    background-color: white;
+    margin: 2vmax;
+    border-radius: 4px;
+    padding-top: 1rem;
+    > p {
+      font: 400 2rem "Roboto";
+    }
     .confirmCartItemsBox {
       max-height: 20rem;
       overflow-y: auto;
       border: 1px solid rgba(0, 0, 0, 0.267);
+      border-radius: 4px;
       padding: 1rem;
       > div {
         display: flex;
@@ -42,7 +51,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 2vmax 0;
-        background-color: tomato;
+        background-color: rgb(250, 132, 111);
         padding: 1rem;
         border-radius: 0.2rem;
         height: 4rem;
@@ -70,6 +79,9 @@
   }
   .orderSummary {
     padding: 7vmax;
+    background-color: white;
+    margin: 2vmax;
+    border-radius: 4px;
     > p {
       text-align: center;
       font: 400 2rem "Roboto";
