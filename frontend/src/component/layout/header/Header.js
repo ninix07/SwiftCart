@@ -11,17 +11,9 @@ import { Link } from "react-router-dom";
 import logo from "../../../image/logo.png";
 const Header = () => {
   const [Active, setActive] = useState(false);
-  const [profileMenu, setProfileMenu] = useState(false);
   let history = useNavigate();
-  const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  const ProfileActive = () => {
-    setProfileMenu(true);
-  };
-  const HoverProfileActive = () => {
-    setProfileMenu(false);
-  };
   useEffect(() => {
     const handleDocumentClick = (event) => {
       const isNavElement = event.target.closest(".navItems");
@@ -59,58 +51,55 @@ const Header = () => {
           </Link>
         </div>
         <div className={`navItems ${Active ? "active" : ""}`}>
-          <div className="list">
-            <ul>
-              <li>
-                <Link to="/" className="active">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="active">
-                  Product
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="active">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="active">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="icons">
-            <Link to="/search" className="active">
-              <BiSearchAlt2 className="iconsStyle" size={25} />
-            </Link>
-            <Link to="/cart" className="active">
-              <BiCartAlt className="iconsStyle" size={25} />
-            </Link>
-
-            {isAuthenticated ? (
-              <img
-                alt=""
-                src={
-                  user.profile_image.url
-                    ? user.profile_image.url
-                    : "./Profile.png"
-                }
-                className="image"
-                onMouseOver={ProfileActive}
-                onClick={() => {
-                  history("/account");
-                }}
-              />
-            ) : (
-              <Link to="/login" className="active">
-                <BiUser className="iconsStyle" size={25} />
+          <ul>
+            <li>
+              <Link to="/" className="active">
+                Home
               </Link>
-            )}
-          </div>
+            </li>
+            <li>
+              <Link to="/products" className="active">
+                Product
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="active">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="active">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className={`icons ${Active ? "active" : ""}`}>
+          <Link to="/search" className="active">
+            <BiSearchAlt2 className="iconsStyle" />
+          </Link>
+          <Link to="/cart" className="active">
+            <BiCartAlt className="iconsStyle" />
+          </Link>
+
+          {isAuthenticated ? (
+            <img
+              alt=""
+              src={
+                user.profile_image.url
+                  ? user.profile_image.url
+                  : "./Profile.png"
+              }
+              className="image"
+              onClick={() => {
+                history("/account");
+              }}
+            />
+          ) : (
+            <Link to="/login" className="active">
+              <BiUser className="iconsStyle" size={25} />
+            </Link>
+          )}
         </div>
 
         <div className="mobile">

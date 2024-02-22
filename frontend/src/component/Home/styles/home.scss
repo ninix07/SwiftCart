@@ -1,55 +1,63 @@
-.Banner {
-  background-image: linear-gradient(to bottom, #1b2430, #2a3239);
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  & h1 {
-    font-weight: 600;
-    color: tomato;
-    font-size: 2rem;
-    margin: 5vmin;
-  }
-  & p {
-    font-weight: 300;
-    font-size: 2rem;
-    color: tomato;
-    margin: 3vmin;
+.homeUpper {
+  .Banner {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4fdff;
+    border-radius: 0 0 8rem 8rem;
+    & h1 {
+      font: 600 3rem "Montserrat";
+      line-height: 3rem;
+      letter-spacing: 0.8vh;
+    }
+    & p {
+      font: 300 2rem "Montserrat";
+      line-height: 3rem;
+      letter-spacing: 0.8vh;
+    }
+    & img {
+      height: 40vh;
+    }
   }
   & a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
     & button {
-      margin-bottom: 5vmax;
       cursor: pointer;
-      background-color: #ffffff;
+      background-color: #13aeb8;
+      color: white;
       border: none;
-      border-radius: 0.5rem;
-      padding: 1vmax;
+      border-radius: 4vh;
+      padding: 1.5rem;
       transition: all 0.5s;
-      width: 10rem;
-      font: 500 1vmax;
+      width: 30rem;
+      font: 600 1.5rem "Montserrat";
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 2%;
+      .icon {
+        font-size: 1.5rem;
+      }
     }
   }
   & a :hover {
     background-color: tomato;
-    color: white;
   }
 }
 .homeHeading {
   text-align: center;
-  font-weight: 600;
-  font-size: 2rem;
+  font: 600 2rem "Montserrat";
   border-bottom: 1px solid rgba(21, 21, 21, 0.5);
   width: 20vmax;
   padding: 1vmax;
-  margin: 5vmax auto;
+  margin: 6rem auto;
 }
 .container {
   display: flex;
@@ -60,20 +68,36 @@
 }
 
 @media screen and (max-width: 768px) {
-  .Banner {
-    height: 80vh;
-    & h1 {
-      margin: 3vh;
-      font-size: 2rem;
+  .homeUpper {
+    .Banner {
+      height: 60vh;
+      border-radius: 0 0 4rem 4rem;
+      & h1 {
+        font: 600 2rem "Montserrat";
+        line-height: 3rem;
+        letter-spacing: 0.8vh;
+      }
+      & p {
+        font: 300 1rem "Montserrat";
+        line-height: 3rem;
+        letter-spacing: 0.8vh;
+      }
+      & img {
+        height: 25vh;
+      }
     }
-    & p {
-      margin: 1vh;
-      font-size: 1.5rem;
+    & a {
+      & button {
+        width: 21rem;
+        font: 600 1rem "Montserrat";
+        .icon {
+          font-size: 1rem;
+        }
+      }
     }
-  }
-
-  .Banner a button {
-    font-size: 1rem;
+    & a :hover {
+      background-color: none;
+    }
   }
   .container {
     width: 100%;

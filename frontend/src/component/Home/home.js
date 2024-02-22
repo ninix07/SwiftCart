@@ -7,6 +7,7 @@ import { clearError, getProduct } from "../../actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../layout/loader/Loader";
 import { useAlert } from "react-alert";
+import background from "../../image/background.png";
 
 const Home = () => {
   const alert = useAlert();
@@ -26,13 +27,19 @@ const Home = () => {
       ) : (
         <Fragment>
           <MetaData title="Ecommerce" />
-          <div className="Banner">
-            <p>Welcome to Ecommerce</p>
-            <h1>Find Amazing Products Below</h1>
+          <div className="homeUpper">
+            <div className="Banner">
+              <h1>WELCOME TO SwiftCart</h1>
+              <p>
+                Your one stop <b>shopping</b> solution
+              </p>
+              <img src={background} alt="home-image" />
+            </div>
+
             <a href="#container">
               <button>
-                Scroll
-                <CgMouse />
+                Scroll to find amazing products
+                <CgMouse className="icon" />
               </button>
             </a>
           </div>

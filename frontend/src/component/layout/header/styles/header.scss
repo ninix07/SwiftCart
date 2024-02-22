@@ -2,7 +2,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1b2430;
+  background-color: #e4fdff;
   padding: 1rem 2rem;
   .logo {
     flex: 0.5;
@@ -15,12 +15,15 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
     z-index: 100;
     overflow: hidden;
+    flex: 3;
     ul {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      width: 50%;
+      justify-content: space-evenly;
       li {
         list-style: none;
         padding: 0 1.3rem;
@@ -28,9 +31,8 @@ nav {
 
         a {
           text-decoration: none;
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: #ffffff;
+          font: 600 1.3rem "Montserrat";
+          color: #000000;
           transition: 0.3s ease-in-out;
         }
 
@@ -44,56 +46,30 @@ nav {
       }
     }
   }
-  .ProfileMenu {
-    background-color: tomato;
-    height: fit-content;
-    padding: 1.5rem;
-    position: fixed;
-    right: 0;
-    top: 4rem;
-    margin: 1rem 0.5rem;
-    border-radius: 5%;
-    opacity: 0;
-    z-index: 100;
-    & div {
-      font-size: 1rem;
-      font-weight: bold;
-      color: white;
-      margin-top: 1vh;
+  .icons {
+    flex: 0.5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .iconsStyle {
+      padding: 0 1vw;
+      font-size: 2rem;
+      color: #000000;
+    }
+    .iconsStyle:hover {
+      color: #ff7a00;
+      transition: 0.3s ease-in-out;
       cursor: pointer;
     }
-    ::before {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 3rem;
-      top: -0.7rem;
-      border-bottom: 12px solid tomato;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
+    .image {
+      padding: 0 1vw;
+      border-radius: 50%;
+      height: 2rem;
     }
-  }
-  .ProfileMenu.Active {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .PMenuIcon {
-    padding-top: 1vh;
-    margin-right: 0.5vw;
-  }
-  .iconsStyle {
-    padding: 0 1vw;
-    color: #ffffff;
-  }
-  .image {
-    padding: 0 1vw;
-    border-radius: 50%;
-    height: 1.8rem;
-  }
-  .iconsStyle:hover {
-    color: #ff7a00;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
+    .image:hover {
+      cursor: pointer;
+    }
   }
 
   .mobile {
@@ -110,7 +86,7 @@ nav {
       right: -600px;
       width: 200px;
       height: 100vh;
-      background-color: #1b2430;
+      background-color: #e4fdff;
       box-shadow: 0px, 40px, 60px rgba(255, 255, 255, 0.7);
       transition: 0.5s ease-in-out;
       padding-left: 10px;
@@ -124,22 +100,27 @@ nav {
           margin-top: 20px;
         }
       }
-      .icons {
-        display: flex;
-        gap: 10%;
-        align-items: center;
-        margin: 20px;
-      }
     }
-    .navItems.active {
+    .icons {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      flex-direction: row;
+      position: fixed;
+      top: 300px;
+      right: -600px;
+      width: 200px;
+      transition: 0.5s ease-in-out;
+      padding-left: 10px;
+    }
+    .navItems.active,
+    .icons.active {
       right: 0px;
       z-index: 100;
     }
+
     .mobile {
       display: block;
-    }
-    .ProfileMenu.Active {
-      display: none;
     }
   }
 }
