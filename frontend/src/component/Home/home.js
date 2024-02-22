@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { CgMouse } from "react-icons/cg";
+import { GiMouse } from "react-icons/gi";
 import "./styles/home.scss";
 import ProductCard from "./productCard.js";
 import MetaData from "../layout/metaData";
@@ -29,17 +29,21 @@ const Home = () => {
           <MetaData title="Ecommerce" />
           <div className="homeUpper">
             <div className="Banner">
-              <h1>WELCOME TO SwiftCart</h1>
-              <p>
-                Your one stop <b>shopping</b> solution
-              </p>
-              <img src={background} alt="home-image" />
+              <div>
+                <h1>WELCOME TO SwiftCart</h1>
+                <p>
+                  Your one stop <b>shopping</b> solution
+                </p>
+              </div>
+              <div>
+                <img src={background} alt="home-image" />
+              </div>
             </div>
 
             <a href="#container">
               <button>
                 Scroll to find amazing products
-                <CgMouse className="icon" />
+                <GiMouse className="icon" />
               </button>
             </a>
           </div>

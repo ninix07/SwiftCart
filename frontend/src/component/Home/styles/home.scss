@@ -1,4 +1,7 @@
 .homeUpper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   .Banner {
     height: 75vh;
     display: flex;
@@ -8,21 +11,24 @@
     justify-content: center;
     background-color: #e4fdff;
     border-radius: 0 0 8rem 8rem;
+    padding: 1rem;
     & h1 {
       font: 600 3rem "Montserrat";
-      line-height: 3rem;
+      line-height: 6rem;
       letter-spacing: 0.8vh;
     }
     & p {
       font: 300 2rem "Montserrat";
-      line-height: 3rem;
+      line-height: 6rem;
       letter-spacing: 0.8vh;
     }
     & img {
+      // margin-top: 3vh;
       height: 40vh;
     }
   }
   & a {
+    align-self: end;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -36,19 +42,18 @@
       border-radius: 4vh;
       padding: 1.5rem;
       transition: all 0.5s;
-      width: 30rem;
+      width: 35rem;
       font: 600 1.5rem "Montserrat";
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2%;
       .icon {
-        font-size: 1.5rem;
+        font-size: 3rem;
       }
     }
   }
   & a :hover {
-    background-color: tomato;
+    background-color: none;
   }
 }
 .homeHeading {
@@ -69,18 +74,20 @@
 
 @media screen and (max-width: 768px) {
   .homeUpper {
+    height: 80vh;
     .Banner {
       height: 60vh;
       border-radius: 0 0 4rem 4rem;
+      padding: 1rem;
       & h1 {
         font: 600 2rem "Montserrat";
         line-height: 3rem;
-        letter-spacing: 0.8vh;
+        letter-spacing: 0.8rem;
       }
       & p {
         font: 300 1rem "Montserrat";
-        line-height: 3rem;
-        letter-spacing: 0.8vh;
+        line-height: 2rem;
+        letter-spacing: 0.8rem;
       }
       & img {
         height: 25vh;
@@ -89,9 +96,9 @@
     & a {
       & button {
         width: 21rem;
-        font: 600 1rem "Montserrat";
+        font: 600 0.9rem "Montserrat";
         .icon {
-          font-size: 1rem;
+          font-size: 1.8rem;
         }
       }
     }
