@@ -5,14 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-color: rgba(214, 214, 214, 0.2);
   overflow: hidden;
 
   .LoginBox {
     padding: 3vh 0;
     background-color: white;
-    width: 25vw;
-    height: 25rem;
+    width: 25rem;
+    height: 35rem;
     box-sizing: border-box;
     overflow: hidden;
 
@@ -21,19 +21,19 @@
       height: 3vmax;
       > p {
         color: rgba(0, 0, 0, 0.678);
-        font: 300 1.4vmax "Roboto";
+        font: 300 1.4vmax "Montserrat";
         transition: all 0.5s;
         cursor: pointer;
         display: grid;
         place-items: center;
         width: 100%;
         &:hover {
-          color: tomato;
+          color: tom;
         }
       }
     }
     > div > button {
-      background-color: tomato;
+      background-color: #13aeb8;
       height: 3px;
       width: 50%;
       border: none;
@@ -47,26 +47,25 @@
       margin: auto;
       padding: 1.5rem;
       justify-content: space-evenly;
-      height: 15rem;
+      height: 25rem;
       transition: all 0.5s;
       > div {
         display: flex;
         width: 100%;
         align-items: center;
         > input {
-          padding: 1vmax 4vmax;
-          padding-right: 1vmax;
+          padding: 1rem 3rem;
           width: 100%;
           box-sizing: border-box;
           border: 1px solid rgba(0, 0, 0, 0.267);
           border-radius: 4px;
-          font: 300 0.9vmax cursive;
+          font: 300 0.9rem cursive;
           outline: none;
         }
         > svg {
           position: absolute;
-          transform: translateX(1vmax);
-          font-size: 1.6vmax;
+          transform: translateX(0.5rem);
+          font-size: 1.6rem;
           color: rgba(0, 0, 0, 0.623);
         }
       }
@@ -75,7 +74,7 @@
         text-decoration: none;
         align-self: flex-end;
         transition: all 0.5s;
-        font: 500 0.5rem "Roboto";
+        font: 500 1rem "Monserrat";
         &:hover {
           color: black;
         }
@@ -83,14 +82,14 @@
       .loginBtn,
       .signUpBtn {
         border: none;
-        background-color: tomato;
+        background-color: #13aeb8;
         color: white;
-        font: 300 0.9vmax "Roboto";
+        font: 300 0.9rem "Montserrat";
         width: 100%;
-        padding: 0.8vmax;
+        padding: 0.8rem;
         cursor: pointer;
         transition: all 0.5s;
-        border-radius: 4px;
+        border-radius: 4rem;
         outline: none;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
       }
@@ -110,10 +109,10 @@
       cursor: pointer;
       width: 100%;
       z-index: 2;
-      height: 5vh;
+      height: 3rem;
       border: none;
       margin: 0%;
-      font: 400 0.8vmax cursive;
+      font: 400 0.8 cursive;
       transition: all 0.5s;
       padding: 0 1vmax;
       color: rgba(0, 0, 0, 0.623);
@@ -148,32 +147,22 @@
     color: red;
   }
   .LoginContainer {
+    height: 70vh;
     z-index: -1;
     .LoginBox {
       width: 90vw;
-      height: 50vh;
+      height: 30rem;
+      padding: 2rem 0;
+
       .toggle {
-        height: 5vmax;
+        height: 1rem;
         > p {
-          font: 300 2vmax "Roboto";
+          font: 300 2vmax "Montserrat";
         }
       }
       .loginForm,
       .signUpForm {
-        > a {
-          font: 300 1.5vmax "Roboto";
-        }
-        > div {
-          > input {
-            padding: 1.3vmax 4vmax;
-          }
-        }
-
-        .loginBtn,
-        .signUpBtn {
-          font: 300 1.2vmax "Roboto";
-          padding: 1vmax;
-        }
+        padding: 0 2rem;
       }
     }
 

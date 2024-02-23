@@ -13,7 +13,7 @@
     .shippingHeading {
       text-align: center;
       color: rgba(0, 0, 0, 0.664);
-      font: 400 1.3rem "Roboto";
+      font: 400 1.3rem "Montserrat";
       border-bottom: 1px solid rgba(0, 0, 0, 0.205);
       padding: 1.3vmax;
       width: 50%;
@@ -52,14 +52,14 @@
       }
       .shippingBtn {
         border: none;
-        background-color: tomato;
+        background-color: #13aeb8;
         color: rgb(236, 233, 233);
-        font: 400 1rem "Roboto";
+        font: 400 1rem "Montserrat";
         width: 100%;
         padding: 0.8rem;
         cursor: pointer;
         transition: all 0.5s;
-        border-radius: 4px;
+        border-radius: 8rem;
         outline: none;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
       }
@@ -71,7 +71,7 @@
     .shippingBox {
       width: 100vw;
       .shippingHeading {
-        font: 400 1.5rem "Roboto";
+        font: 400 1.5rem "Montserrat";
         padding: 1.5vmax;
       }
       .shippingForm {
@@ -84,7 +84,7 @@
           }
         }
         .shippingBtn {
-          font: 300 1rem "Roboto";
+          font: 300 1rem "Montserrat";
           width: 100%;
           padding: 1rem;
           cursor: pointer;

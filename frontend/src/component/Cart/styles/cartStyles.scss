@@ -1,14 +1,14 @@
 .cartPage {
   padding: 5vmax;
   .cartHeader {
-    background-color: tomato;
+    background-color: #13aeb8;
     box-sizing: border-box;
     margin: auto;
     color: white;
     width: 90%;
     display: grid;
     grid-template-columns: 4fr 1fr 1fr;
-    font: 300 1rem "Roboto";
+    font: 300 1rem "Montserrat";
     > p {
       margin: 10px;
       &:last-child {
@@ -41,7 +41,7 @@
         padding: 0.5vmax;
         width: 1.5vmax;
         outline: none;
-        font: 400 0.8rem "Roboto";
+        font: 400 0.8rem "Montserrat";
         color: rgba(0, 0, 0, 0.74);
       }
     }
@@ -60,24 +60,24 @@
     display: grid;
     grid-template-columns: 2fr 1.2fr;
     .TotalBox {
-      border-top: 3px solid tomato;
+      border-top: 3px solid #13aeb8;
       margin: 1vmax 4vmax;
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
       padding: 2vmax 0;
-      font: 300 1rem "Roboto";
+      font: 300 1rem "Montserrat";
     }
     .checkOut {
       display: flex;
       justify-content: flex-end;
       > button {
-        background-color: tomato;
+        background-color: #13aeb8;
         padding: 0.8vmax 4vmax;
         width: 50%;
         border-radius: 30px;
         color: white;
-        font: 300 0.8rem "Roboto";
+        font: 300 0.8rem "Montserrat";
         margin: 1vmax 4vmax;
         border: none;
         cursor: pointer;
@@ -92,7 +92,7 @@
   flex-direction: column;
   padding: 12vmax;
   > p {
-    font: 300 2rem "Roboto";
+    font: 300 2rem "Montserrat";
   }
   > button {
     background-color: tomato;
@@ -100,7 +100,7 @@
     width: 20%;
     border-radius: 30px;
     color: white;
-    font: 300 0.8rem "Roboto";
+    font: 300 0.8rem "Montserrat";
     margin: 1vmax 4vmax;
     border: none;
     cursor: pointer;
@@ -113,7 +113,7 @@
     min-height: 60vh;
     .cartHeader {
       width: 100%;
-      font: 300 1.2rem "Roboto";
+      font: 300 1.2rem "Montserrat";
       grid-template-columns: 2fr 1fr 1fr;
     }
 
@@ -127,13 +127,13 @@
         }
         > input {
           padding: 0.5rem;
-          font: 400 1.2rem "Roboto";
+          font: 400 1.2rem "Montserrat";
         }
       }
       .cartSubtotal {
         padding: 0.5rem;
         height: 15vmax;
-        font: 300 1.3rem "Roboto";
+        font: 300 1.3rem "Montserrat";
       }
     }
     .cartTotal {
@@ -143,7 +143,7 @@
         > button {
           padding: 2vmax 4vmax;
           width: 100%;
-          font: 300 1rem "Roboto";
+          font: 300 1rem "Montserrat";
         }
       }
     }

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BiSearchAlt2, BiCartAlt, BiUser } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { MdOutlineShoppingBag, MdDashboard } from "react-icons/md";
-import { IoLogOut } from "react-icons/io5";
 import "./styles/header.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../../actions/userAction";
 import { Link } from "react-router-dom";
 import logo from "../../../image/logo.png";
 const Header = () => {
@@ -97,7 +94,7 @@ const Header = () => {
             />
           ) : (
             <Link to="/login" className="active">
-              <BiUser className="iconsStyle" size={25} />
+              <BiUser className="iconsStyle" />
             </Link>
           )}
         </div>

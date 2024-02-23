@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(214, 214, 214);
+  background-color: rgba(214, 214, 214, 0.2);
 
   > input[type="text"] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
@@ -15,22 +15,21 @@
     padding: 1vmax 2vmax;
     width: 50%;
     outline: none;
-    border-radius: 0%;
+    border-radius: 8rem 0 0 8rem;
     font: 300 1.1vmax cursive;
     box-sizing: border-box;
     height: 8%;
   }
   > input[type="submit"] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
-    background-color: tomato;
+    background-color: #13aeb8;
     border: none;
-    color: rgba(0, 0, 0, 0.637);
+    color: white;
     padding: 1vmax 2vmax;
     width: 15%;
-    border-radius: 0%;
+    border-radius: 0 8rem 8rem 0;
     outline: none;
-    border-radius: 0%;
-    font: 300 1.1vmax "Roboto";
+    font: 300 1.1vmax "Montserrat";
     box-sizing: border-box;
     transition: all 0.5s;
     height: 8%;
@@ -42,7 +41,7 @@
 @media screen and (max-width: 720px) {
   .searchBox {
     > input[type="submit"] {
-      width: 15%;
+      width: 30%;
     }
   }
 }

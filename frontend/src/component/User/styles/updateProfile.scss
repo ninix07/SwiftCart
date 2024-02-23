@@ -9,7 +9,7 @@
   overflow: hidden;
 
   .updateProfileBox {
-    padding: 3vh 0;
+    padding: 1rem 0;
     background-color: white;
     width: 25rem;
     height: 28rem;
@@ -18,26 +18,19 @@
     .updateProfileHeading {
       text-align: center;
       color: rgba(0, 0, 0, 0.664);
-      font: 400 1.7rem "Roboto";
+      font: 400 1.7rem "Montserrat";
       padding: 1.3vmax;
       border-bottom: 1px solid rgba(0, 0, 0, 0.205);
       width: 50%;
       margin: auto;
     }
 
-    > div > button {
-      background-color: tomato;
-      height: 3rem;
-      width: 50%;
-      border: none;
-      transition: al 0.5s;
-    }
     .updateProfileForm {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: auto;
-      padding: 2vmax;
+      padding: 1rem;
       justify-content: space-evenly;
       height: 70%;
       transition: all 0.5s;
@@ -52,7 +45,7 @@
           box-sizing: border-box;
           border: 1px solid rgba(0, 0, 0, 0.267);
           border-radius: 4px;
-          font: 300 0.7rem cursive;
+          font: 300 1rem cursive;
           outline: none;
         }
         > svg {
@@ -67,21 +60,21 @@
         text-decoration: none;
         align-self: flex-end;
         transition: all 0.5s;
-        font: 500 0.8rem "Roboto";
+        font: 500 1rem "Montserrat";
         &:hover {
           color: black;
         }
       }
       .updateProfileBtn {
         border: none;
-        background-color: tomato;
+        background-color: #13aeb8;
         color: white;
-        font: 300 0.8rem "Roboto";
+        font: 300 1rem "Montserrat";
         width: 100%;
         padding: 0.8rem;
         cursor: pointer;
         transition: all 0.5s;
-        border-radius: 4px;
+        border-radius: 8rem;
         outline: none;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
       }
@@ -104,7 +97,7 @@
       height: 2.5rem;
       border: none;
       margin: 0%;
-      font: 400 0.8rem cursive;
+      font: 400 1rem cursive;
       transition: all 0.5s;
       padding: 0 1rem;
       color: rgba(0, 0, 0, 0.623);
@@ -128,7 +121,7 @@
       height: 20rem;
       .updateProfileForm {
         > a {
-          font: 300 1rem "Roboto";
+          font: 300 1rem "Montserrat";
         }
         > div {
           > input {
@@ -137,7 +130,7 @@
         }
 
         .updateProfileBtn {
-          font: 300 0.8rem "Roboto";
+          font: 300 0.8rem "Montserrat";
           padding: 0.8;
         }
       }
