@@ -1,18 +1,18 @@
 .product {
-  width: 14rem;
+  width: 12vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: rgb(220, 220, 220);
   background-color: #1b2430;
-  margin: 1.5rem;
+  margin: 2rem;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
   border-radius: 1vmax;
 
   img {
-    width: 14rem;
+    width: 12vw;
     min-height: 15rem;
     border-radius: 0.9vmax 0.9vmax 0 0;
   }
