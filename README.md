@@ -1,4 +1,4 @@
-# E-Commerce Application Overview
+# SwiftCart (E-Commerce Application) Overview
 
 The E-Commerce application provides a platform for vendors to list their products, customers to browse and purchase items, and facilitate reviews for products.
 
